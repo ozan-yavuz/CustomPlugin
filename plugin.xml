@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="info.androidabcd.plugin.custom" version="1.0.0">
+    <name>CordovaCustomPlugin</name>
+
+    <description>An Android Cordova plugin that allows users to display simple Toast messages at the bottom of the screen.</description>
+    <license>MIT</license>
+
+    <keywords>cordova,android,toast,message,alert</keywords>
+    <repo>https://github.com/stanidesis/toastyplugin/Toast-PhoneGap-Plugin.git</repo>
+    <issue>https://github.com/stanidesis/toastyplugin/issues</issue>
+  
+    <engines>
+        <engine name="cordova" version=">=3.0.0"/>
+    </engines>
+  
+    <js-module src="www/CordovaCustomPlugin.js" name="CordovaCustomPlugin">
+        <clobbers target="cordova.plugins.CordovaCustomPlugin" />
+    </js-module>
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="CordovaCustomPlugin">
+                <param name="android-package" value="info.androidabcd.plugin.custom.CordovaCustomPlugin"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/CordovaCustomPlugin.java" target-dir="src/android" />
+    </platform>
+</plugin>
